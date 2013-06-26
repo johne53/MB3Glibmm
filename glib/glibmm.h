@@ -90,7 +90,6 @@
 
 #include <glibmm/arrayhandle.h>
 #include <glibmm/balancedtree.h>
-#include <glibmm/base64.h>
 #include <glibmm/bytearray.h>
 #include <glibmm/bytes.h>
 #include <glibmm/checksum.h>
@@ -98,7 +97,6 @@
 #include <glibmm/containerhandle_shared.h>
 #include <glibmm/convert.h>
 #include <glibmm/date.h>
-#include <glibmm/datetime.h>
 #include <glibmm/dispatcher.h>
 #include <glibmm/error.h>
 #include <glibmm/exception.h>
@@ -136,7 +134,6 @@
 #include <glibmm/threadpool.h>
 #include <glibmm/timer.h>
 #include <glibmm/timeval.h>
-#include <glibmm/timezone.h>
 #include <glibmm/uriutils.h>
 #include <glibmm/ustring.h>
 #include <glibmm/value.h>
