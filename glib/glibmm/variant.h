@@ -3,6 +3,9 @@
 #ifndef _GLIBMM_VARIANT_H
 #define _GLIBMM_VARIANT_H
 
+#ifdef _MSC_VER /* This section added by JE - 28-06-2013 */
+#pragma warning(disable:4290)
+#endif
 
 /* Copyright 2010 The glibmm Development Team
  *
