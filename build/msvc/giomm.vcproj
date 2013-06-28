@@ -625,38 +625,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\gio\giomm\tlscertificate.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlsclientconnection.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlsconnection.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlsdatabase.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlsfiledatabase.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlsinteraction.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlspassword.cc"
-				>
-			</File>
-			<File
-				RelativePath="..\..\gio\giomm\tlsserverconnection.cc"
-				>
-			</File>
-			<File
 				RelativePath="..\..\gio\giomm\volume.cc"
 				>
 			</File>
