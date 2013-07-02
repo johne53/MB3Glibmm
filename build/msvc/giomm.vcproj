@@ -331,6 +331,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\gio\giomm\dbusinterfaceskeleton.cc"
+				>
+			</File>
+			<File
 				RelativePath="..\..\gio\giomm\dbusinterfacevtable.cc"
 				>
 			</File>
@@ -758,6 +762,10 @@
 			</File>
 			<File
 				RelativePath="..\..\gio\giomm\dbuserrorutils.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\gio\giomm\dbusinterfaceskeleton.h"
 				>
 			</File>
 			<File

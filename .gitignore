@@ -135,6 +135,8 @@ giommconfig.h
 /gio/giomm/dbuserrorutils.h
 /gio/giomm/dbusinterface.cc
 /gio/giomm/dbusinterface.h
+/gio/giomm/dbusinterfaceskeleton.cc
+/gio/giomm/dbusinterfaceskeleton.h
 /gio/giomm/dbusinterfacevtable.cc
 /gio/giomm/dbusinterfacevtable.h
 /gio/giomm/dbusintrospection.cc
