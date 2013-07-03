@@ -25,6 +25,10 @@
 		Value="@GlibBuildRootFolder@"
 	/>
 	<UserMacro
+		Name="GlibmmBuildRootFolder"
+		Value="@GlibmmBuildRootFolder@"
+	/>
+	<UserMacro
 		Name="GenericIncludeFolder"
 		Value="@GenericIncludeFolder@"
 	/>

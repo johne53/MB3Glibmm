@@ -13,7 +13,6 @@ $current_minus_age = 0;
 $glibmm_module_name = "libglibmm-2.4";
 $giomm_module_name = "libgiomm-2.4";
 $exec_prefix = "lib";
-$m4_path = "not_specified";
 
 sub process_file
 {
@@ -43,6 +42,7 @@ sub process_file
 	    s/\@M4@/$m4_path/g;
 	    s/\@libdir@/$generic_library_folder/g;
 	    s/\@GlibBuildRootFolder@/$glib_build_root_folder/g;
+	    s/\@GlibmmBuildRootFolder@/$glibmm_build_root_folder/g;
 	    s/\@GenericIncludeFolder@/$generic_include_folder/g;
 	    s/\@GenericLibraryFolder@/$generic_library_folder/g;
 	    s/\@GenericWin32LibraryFolder@/$generic_win32_library_folder/g;
