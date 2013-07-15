@@ -3,11 +3,11 @@
 
 require "../local-paths.lib";
 
-$glibmm_version = "2.36.2";
+$glibmm_version = "2.37.4";
 $major = 2;
-$minor = 36;
-$micro = 2;
-$binary_age = 362;
+$minor = 37;
+$micro = 4;
+$binary_age = 3704;
 $interface_age = 0;
 $current_minus_age = 0;
 $glibmm_module_name = "libglibmm-2.4";
