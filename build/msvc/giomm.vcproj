@@ -331,10 +331,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\gio\giomm\dbusinterfaceskeleton.cc"
-				>
-			</File>
-			<File
 				RelativePath="..\..\gio\giomm\dbusinterfacevtable.cc"
 				>
 			</File>
