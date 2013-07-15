@@ -22,6 +22,10 @@
  */
 
 
+#ifdef _MSC_VER /* This section added by JE - 28-06-2013 */
+#pragma warning(disable:4290)
+#endif
+
 #include <glibmmconfig.h>
 #include <glibmm/varianttype.h>
 #include <glibmm/variantiter.h>
