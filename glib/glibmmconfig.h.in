@@ -6,7 +6,7 @@
 # if defined(_MSC_VER)
 #  define GLIBMM_MSC 1
 #  define GLIBMM_WIN32 1
-#  define GLIBMM_DLL 1
+/* #  define GLIBMM_DLL 1 Commented out (probably temporarily) by JE - 14-11-2009 */
 # elif defined(__CYGWIN__)
 #  define GLIBMM_CONFIGURE 1
 # elif defined(__MINGW32__)
@@ -92,8 +92,8 @@
 /* This is always set. This is only for backwards compatibility. */
 #undef GLIBMM_PROPERTIES_ENABLED
 
-/* Define if glibmm is built as a static library */
-#undef GLIBMM_STATIC_LIB
+/* Define if glibmm is built as a static library */ /* Defined by JE - 14-08-2013 (was previously #undef'd */
+#define GLIBMM_STATIC_LIB 1
 
 
 #endif /* GLIBMM_CONFIGURE */
