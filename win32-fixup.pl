@@ -63,6 +63,7 @@ process_file ("tools/gmmproc");
 my $command=join(' ',@ARGV);
 if ($command eq -buildall) {
 	process_file ("build/msvc/glibmm.vsprops");
+	process_file ("tools/generate_wrap_init.pl");
 #	process_file ("MSVC_Net2005/giomm/giomm.rc");
 #	process_file ("MSVC_Net2005/glibmm/glibmm.rc");
 }
