@@ -270,6 +270,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\glib\glibmm\datetime.cc"
+				>
+			</File>
+			<File
 				RelativePath="..\..\glib\glibmm\debug.cc"
 				>
 			</File>
@@ -525,6 +529,10 @@
 			</File>
 			<File
 				RelativePath="..\..\glib\glibmm\date.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\glib\glibmm\datetime.h"
 				>
 			</File>
 			<File
