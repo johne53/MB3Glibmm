@@ -25,6 +25,7 @@
 #include <glib-object.h>
 #include <glibmmconfig.h> //Include this here so that the /private/*.h classes have access to GLIBMM_VFUNCS_ENABLED
 
+#include <vector> //For properties that custom types might override.
 
 #ifndef DOXYGEN_SHOULD_SKIP_THIS
 
@@ -95,7 +96,16 @@ protected:
   void register_derived_type(GType base_type, GTypeModule* module);
 
 private:
+  static void custom_class_base_finalize_function(void* g_class);
   static void custom_class_init_function(void* g_class, void* class_data);
+
+public:
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+  // The type that holds the values of the properties of custom types.
+  typedef std::vector<GValue*> properties_type;
+  // The quark used for storing/getting the properties of custom types.
+  static GQuark properties_quark;
+#endif
 };
 
 inline
