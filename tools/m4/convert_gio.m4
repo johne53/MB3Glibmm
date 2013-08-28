@@ -219,6 +219,7 @@ _CONVERSION(`GMenuLinkIter*',`Glib::RefPtr<MenuLinkIter>',`Glib::wrap($3)')
 
 # MenuModel
 _CONVERSION(`GMenuModel*',`Glib::RefPtr<MenuModel>',`Glib::wrap($3)')
+_CONVERSION(`GMenuModel*',`Glib::RefPtr<const MenuModel>',`Glib::wrap($3)')
 _CONVERSION(`const Glib::RefPtr<MenuModel>&',`GMenuModel*',__CONVERT_CONST_REFPTR_TO_P)
 
 # MenuItem
@@ -304,7 +305,7 @@ _CONVERSION(`const Glib::VariantBase&',`GVariant*',`const_cast<GVariant*>(($3).g
 _CONVERSION(`const Glib::VariantContainerBase&',`GVariant*',`const_cast<GVariant*>(($3).gobj())')
 
 #VariantType
-_CONVERSION(`const GVariantType*',`Glib::VariantType',`Glib::wrap(const_cast<GVariantType*>($3), false)')
+_CONVERSION(`const GVariantType*',`Glib::VariantType',`Glib::wrap(const_cast<GVariantType*>($3), true)')
 _CONVERSION(`const Glib::VariantType&',`const GVariantType*',`$3.gobj()')
 
 #Volume
