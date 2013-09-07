@@ -117,6 +117,7 @@
 				PreprocessorDefinitions="_SECURE_SCL=0;WIN32;NDEBUG;_WINDOWS;G_OS_WIN32;GIOMM_BUILD"
 				StringPooling="false"
 				RuntimeLibrary="2"
+				EnableEnhancedInstructionSet="1"
 				WarningLevel="3"
 			/>
 			<Tool
@@ -183,6 +184,7 @@
 				PreprocessorDefinitions="_SECURE_SCL=0;WIN32;NDEBUG;_WINDOWS;G_OS_WIN32;GIOMM_BUILD"
 				StringPooling="false"
 				RuntimeLibrary="2"
+				EnableEnhancedInstructionSet="1"
 				WarningLevel="3"
 				DebugInformationFormat="3"
 			/>
