@@ -36,7 +36,7 @@ sub process_file
 	    s/\@GLIBMM_MODULE_NAME@/$glibmm_module_name/g;
 	    s/\@GIOMM_MODULE_NAME@/$giomm_module_name/g;
 	    s/\@PERL@/$perl_path/g;
-	    s/\@prefix@/$exec_prefix/g;
+	    s/\@prefix@/$prefix/g;
 	    s/\@exec_prefix@/$exec_prefix/g;
 	    s/\@datarootdir@/$data_root_dir/g;
 	    s/\@M4@/$m4_path/g;
@@ -52,16 +52,28 @@ sub process_file
 	    s/\@Debug32TargetFolder@/$debug32_target_folder/g;
 	    s/\@Release32TargetFolder@/$release32_target_folder/g;
 	    s/\@TargetSxSFolder@/$target_sxs_folder/g;
+	    s/\@includedir@/$generic_include_folder/g;
+	    s/\@GLIBMM_API_VERSION\@/$api_version/g;
+	    s/\@GIOMM_API_VERSION\@/$api_version/g;
 	    print OUTPUT;
 	}
 }
 
+my $command=join(' ',@ARGV);
+
+if (-1 != index($command, "-X64")) {
+	$api_version = "64-2.4-0";
+} else {
+	$api_version = "32-2.4-0";
+}
+
 process_file ("glib/glibmmconfig.h");
+process_file ("glib/glibmm.pc");
+process_file ("gio/giomm.pc");
 process_file ("gio/giommconfig.h");
 process_file ("tools/gmmproc");
 
-my $command=join(' ',@ARGV);
-if ($command eq -buildall) {
+if (-1 != index($command, "-buildall")) {
 	process_file ("build/msvc/glibmm.vsprops");
 	process_file ("tools/generate_wrap_init.pl");
 #	process_file ("MSVC_Net2005/giomm/giomm.rc");
