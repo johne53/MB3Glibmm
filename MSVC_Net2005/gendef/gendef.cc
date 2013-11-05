@@ -90,5 +90,5 @@ int main(int argc,char** argv)
   fclose(dump);
   remove("dumpbin.out");
 
-  cout << dumpbin.c_str() << endl;
+// JE - !!!!  cout << dumpbin.c_str() << endl;
 }
