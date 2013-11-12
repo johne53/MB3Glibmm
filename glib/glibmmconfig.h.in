@@ -92,8 +92,8 @@
 /* This is always set. This is only for backwards compatibility. */
 #undef GLIBMM_PROPERTIES_ENABLED
 
-/* Define if glibmm is built as a static library */ /* Defined by JE - 14-08-2013 (was previously #undef'd */
-#define GLIBMM_STATIC_LIB 1
+/* Define if glibmm is built as a static library */
+/* #undef GLIBMM_STATIC_LIB */
 
 
 #endif /* GLIBMM_CONFIGURE */
