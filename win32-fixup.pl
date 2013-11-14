@@ -10,8 +10,6 @@ $micro = 0;
 $binary_age = 3800;
 $interface_age = 0;
 $current_minus_age = 0;
-$glibmm_module_name = "libglibmm-2.4";
-$giomm_module_name = "libgiomm-2.4";
 $exec_prefix = "lib";
 
 sub process_file
@@ -62,8 +60,12 @@ sub process_file
 my $command=join(' ',@ARGV);
 
 if (-1 != index($command, "-X64")) {
+	$glibmm_module_name = "libglibmm64-2.4";
+	$giomm_module_name = "libgiomm64-2.4";
 	$api_version = "64-2.4-0";
 } else {
+	$glibmm_module_name = "libglibmm32-2.4";
+	$giomm_module_name = "libgiomm32-2.4";
 	$api_version = "32-2.4-0";
 }
 
