@@ -6,7 +6,7 @@
 # if defined(_MSC_VER)
 #  define GLIBMM_MSC 1
 #  define GLIBMM_WIN32 1
-/* #  define GLIBMM_DLL 1 Commented out (probably temporarily) by JE - 14-11-2009 */
+#  define GLIBMM_DLL 1
 # elif defined(__CYGWIN__)
 #  define GLIBMM_CONFIGURE 1
 # elif defined(__MINGW32__)
