@@ -1,11 +1,16 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glibmm", "glibmm.vcproj", "{58B2B53C-C4FF-47FD-817B-095E45B7F7D4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B9844893-1CCD-47D2-9464-95C37A981FCA} = {B9844893-1CCD-47D2-9464-95C37A981FCA}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "giomm", "giomm.vcproj", "{EE6C0430-C2C9-425C-8EBA-963FAC3E9832}"
 	ProjectSection(ProjectDependencies) = postProject
 		{58B2B53C-C4FF-47FD-817B-095E45B7F7D4} = {58B2B53C-C4FF-47FD-817B-095E45B7F7D4}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mm_pre_delete", "mm_pre_delete.vcproj", "{B9844893-1CCD-47D2-9464-95C37A981FCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +31,10 @@ Global
 		{EE6C0430-C2C9-425C-8EBA-963FAC3E9832}.Release 32 with Debugging Capability|Win32.Build.0 = Release 32 with Debugging Capability|Win32
 		{EE6C0430-C2C9-425C-8EBA-963FAC3E9832}.Release 32|Win32.ActiveCfg = Release 32|Win32
 		{EE6C0430-C2C9-425C-8EBA-963FAC3E9832}.Release 32|Win32.Build.0 = Release 32|Win32
+		{B9844893-1CCD-47D2-9464-95C37A981FCA}.Debug 32|Win32.ActiveCfg = Release 32 with Debugging Capability|Win32
+		{B9844893-1CCD-47D2-9464-95C37A981FCA}.Release 32 with Debugging Capability|Win32.ActiveCfg = Release 32 with Debugging Capability|Win32
+		{B9844893-1CCD-47D2-9464-95C37A981FCA}.Release 32 with Debugging Capability|Win32.Build.0 = Release 32 with Debugging Capability|Win32
+		{B9844893-1CCD-47D2-9464-95C37A981FCA}.Release 32|Win32.ActiveCfg = Release 32 with Debugging Capability|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
