@@ -589,3 +589,6 @@ pip-log.txt
 /MSVC_Net2005/giomm/giomm.rc
 /MSVC_Net2005/glibmm/glibmm.rc
 /build/msvc/glibmm.vsprops
+
+/gio/giomm/notification.cc
+/gio/giomm/notification.h
