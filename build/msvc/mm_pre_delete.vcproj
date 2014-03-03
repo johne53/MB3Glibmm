@@ -93,7 +93,7 @@
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
-				CommandLine="copy /Y &quot;$(OutDir)\$(TargetName).exe&quot; &quot;$(GenericWin32BinaryFolder)\$(TargetName).exe&quot;&#x0D;&#x0A;"
+				CommandLine="mkdir &quot;$(GenericWin32BinaryFolder)&quot; 2&gt; NUL&#x0D;&#x0A;copy /Y &quot;$(OutDir)\$(TargetName).exe&quot; &quot;$(GenericWin32BinaryFolder)\$(TargetName).exe&quot;&#x0D;&#x0A;"
 			/>
 		</Configuration>
 	</Configurations>
