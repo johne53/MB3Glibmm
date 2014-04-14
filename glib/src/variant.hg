@@ -214,6 +214,8 @@ public:
    template<class V_CastTo>
    static V_CastTo cast_dynamic(const VariantBase& v) throw(std::bad_cast);
 
+   _IGNORE(g_variant_dict_new)
+
 private:
   /** Relational operators are deleted to prevent invalid conversion
    * to const void*.
@@ -458,6 +460,7 @@ public:
   //TODO: Documentation
   void get(VariantBase& variant) const;
 
+  //TODO: Deprecate this in favour of get(VariantBase&)?
   _WRAP_METHOD(VariantBase get() const, g_variant_get_variant)
 };
 
