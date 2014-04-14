@@ -24,5 +24,6 @@ unicode_p.h
 uriutils_p.h
 valuearray_p.h
 variant_p.h
+variantdict_p.h
 variantiter_p.h
 varianttype_p.h

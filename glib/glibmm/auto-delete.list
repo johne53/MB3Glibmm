@@ -50,6 +50,8 @@ valuearray.cc
 valuearray.h
 variant.cc
 variant.h
+variantdict.cc
+variantdict.h
 variantiter.cc
 variantiter.h
 varianttype.cc
