@@ -592,3 +592,5 @@ pip-log.txt
 
 /gio/giomm/notification.cc
 /gio/giomm/notification.h
+/glib/glibmm/variantdict.cc
+/glib/glibmm/variantdict.h
