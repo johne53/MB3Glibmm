@@ -1,3 +1,7 @@
+#################
+## Original
+#################
+
 # wildcard patterns
 Makefile
 Makefile.in
@@ -80,18 +84,222 @@ giommconfig.h
 # gio/
 /gio/giomm-*.pc
 /gio/giomm-*-uninstalled.pc
-/gio/giomm/*.cc
-!/gio/giomm/contenttype.cc
-!/gio/giomm/init.cc
-!/gio/giomm/slot_async.cc
-/gio/giomm/*.h
-!/gio/giomm/contenttype.h
-!/gio/giomm/init.h
-!/gio/giomm/slot_async.h
-!/gio/giomm/wrap_init.h
+/gio/giomm/action.cc
+/gio/giomm/action.h
+/gio/giomm/actiongroup.cc
+/gio/giomm/actiongroup.h
+/gio/giomm/actionmap.cc
+/gio/giomm/actionmap.h
+/gio/giomm/appinfo.cc
+/gio/giomm/appinfo.h
+/gio/giomm/applaunchcontext.cc
+/gio/giomm/applaunchcontext.h
+/gio/giomm/application.cc
+/gio/giomm/application.h
+/gio/giomm/applicationcommandline.cc
+/gio/giomm/applicationcommandline.h
+/gio/giomm/asyncinitable.cc
+/gio/giomm/asyncinitable.h
+/gio/giomm/asyncresult.cc
+/gio/giomm/asyncresult.h
+/gio/giomm/bufferedinputstream.cc
+/gio/giomm/bufferedinputstream.h
+/gio/giomm/bufferedoutputstream.cc
+/gio/giomm/bufferedoutputstream.h
+/gio/giomm/cancellable.cc
+/gio/giomm/cancellable.h
+/gio/giomm/charsetconverter.cc
+/gio/giomm/charsetconverter.h
+/gio/giomm/converter.cc
+/gio/giomm/converter.h
+/gio/giomm/converterinputstream.cc
+/gio/giomm/converterinputstream.h
+/gio/giomm/converteroutputstream.cc
+/gio/giomm/converteroutputstream.h
+/gio/giomm/credentials.cc
+/gio/giomm/credentials.h
+/gio/giomm/datainputstream.cc
+/gio/giomm/datainputstream.h
+/gio/giomm/dataoutputstream.cc
+/gio/giomm/dataoutputstream.h
+/gio/giomm/dbusactiongroup.cc
+/gio/giomm/dbusactiongroup.h
+/gio/giomm/dbusaddress.cc
+/gio/giomm/dbusaddress.h
+/gio/giomm/dbusauthobserver.cc
+/gio/giomm/dbusauthobserver.h
+/gio/giomm/dbusconnection.cc
+/gio/giomm/dbusconnection.h
+/gio/giomm/dbuserror.cc
+/gio/giomm/dbuserror.h
+/gio/giomm/dbuserrorutils.cc
+/gio/giomm/dbuserrorutils.h
+/gio/giomm/dbusinterface.cc
+/gio/giomm/dbusinterface.h
+/gio/giomm/dbusinterfaceskeleton.cc
+/gio/giomm/dbusinterfaceskeleton.h
+/gio/giomm/dbusinterfacevtable.cc
+/gio/giomm/dbusinterfacevtable.h
+/gio/giomm/dbusintrospection.cc
+/gio/giomm/dbusintrospection.h
+/gio/giomm/dbusmenumodel.cc
+/gio/giomm/dbusmenumodel.h
+/gio/giomm/dbusmessage.cc
+/gio/giomm/dbusmessage.h
+/gio/giomm/dbusmethodinvocation.cc
+/gio/giomm/dbusmethodinvocation.h
+/gio/giomm/dbusobject.cc
+/gio/giomm/dbusobject.h
+/gio/giomm/dbusownname.cc
+/gio/giomm/dbusownname.h
+/gio/giomm/dbusproxy.cc
+/gio/giomm/dbusproxy.h
+/gio/giomm/dbusserver.cc
+/gio/giomm/dbusserver.h
+/gio/giomm/dbussubtreevtable.cc
+/gio/giomm/dbussubtreevtable.h
+/gio/giomm/dbusutils.cc
+/gio/giomm/dbusutils.h
+/gio/giomm/dbuswatchname.cc
+/gio/giomm/dbuswatchname.h
+/gio/giomm/desktopappinfo.cc
+/gio/giomm/desktopappinfo.h
+/gio/giomm/drive.cc
+/gio/giomm/drive.h
+/gio/giomm/emblem.cc
+/gio/giomm/emblem.h
+/gio/giomm/emblemedicon.cc
+/gio/giomm/emblemedicon.h
+/gio/giomm/enums.cc
+/gio/giomm/enums.h
+/gio/giomm/error.cc
+/gio/giomm/error.h
+/gio/giomm/file.cc
+/gio/giomm/file.h
+/gio/giomm/fileattributeinfo.cc
+/gio/giomm/fileattributeinfo.h
+/gio/giomm/fileattributeinfolist.cc
+/gio/giomm/fileattributeinfolist.h
+/gio/giomm/fileenumerator.cc
+/gio/giomm/fileenumerator.h
+/gio/giomm/fileicon.cc
+/gio/giomm/fileicon.h
+/gio/giomm/fileinfo.cc
+/gio/giomm/fileinfo.h
+/gio/giomm/fileinputstream.cc
+/gio/giomm/fileinputstream.h
+/gio/giomm/fileiostream.cc
+/gio/giomm/fileiostream.h
+/gio/giomm/filemonitor.cc
+/gio/giomm/filemonitor.h
+/gio/giomm/filenamecompleter.cc
+/gio/giomm/filenamecompleter.h
+/gio/giomm/fileoutputstream.cc
+/gio/giomm/fileoutputstream.h
+/gio/giomm/filterinputstream.cc
+/gio/giomm/filterinputstream.h
+/gio/giomm/filteroutputstream.cc
+/gio/giomm/filteroutputstream.h
+/gio/giomm/icon.cc
+/gio/giomm/icon.h
+/gio/giomm/inetaddress.cc
+/gio/giomm/inetaddress.h
+/gio/giomm/inetsocketaddress.cc
+/gio/giomm/inetsocketaddress.h
+/gio/giomm/initable.cc
+/gio/giomm/initable.h
+/gio/giomm/inputstream.cc
+/gio/giomm/inputstream.h
+/gio/giomm/iostream.cc
+/gio/giomm/iostream.h
+/gio/giomm/loadableicon.cc
+/gio/giomm/loadableicon.h
+/gio/giomm/memoryinputstream.cc
+/gio/giomm/memoryinputstream.h
+/gio/giomm/memoryoutputstream.cc
+/gio/giomm/memoryoutputstream.h
+/gio/giomm/menu.cc
+/gio/giomm/menu.h
+/gio/giomm/menuattributeiter.cc
+/gio/giomm/menuattributeiter.h
+/gio/giomm/menuitem.cc
+/gio/giomm/menuitem.h
+/gio/giomm/menulinkiter.cc
+/gio/giomm/menulinkiter.h
+/gio/giomm/menumodel.cc
+/gio/giomm/menumodel.h
+/gio/giomm/mount.cc
+/gio/giomm/mount.h
+/gio/giomm/mountoperation.cc
+/gio/giomm/mountoperation.h
+/gio/giomm/networkaddress.cc
+/gio/giomm/networkaddress.h
+/gio/giomm/networkservice.cc
+/gio/giomm/networkservice.h
+/gio/giomm/outputstream.cc
+/gio/giomm/outputstream.h
+/gio/giomm/pollableinputstream.cc
+/gio/giomm/pollableinputstream.h
+/gio/giomm/pollableoutputstream.cc
+/gio/giomm/pollableoutputstream.h
+/gio/giomm/proxy.cc
+/gio/giomm/proxy.h
+/gio/giomm/proxyaddress.cc
+/gio/giomm/proxyaddress.h
+/gio/giomm/proxyresolver.cc
+/gio/giomm/proxyresolver.h
+/gio/giomm/remoteactiongroup.cc
+/gio/giomm/remoteactiongroup.h
+/gio/giomm/resolver.cc
+/gio/giomm/resolver.h
+/gio/giomm/resource.cc
+/gio/giomm/resource.h
+/gio/giomm/seekable.cc
+/gio/giomm/seekable.h
+/gio/giomm/settings.cc
+/gio/giomm/settings.h
+/gio/giomm/simpleaction.cc
+/gio/giomm/simpleaction.h
+/gio/giomm/simpleactiongroup.cc
+/gio/giomm/simpleactiongroup.h
+/gio/giomm/socket.cc
+/gio/giomm/socket.h
+/gio/giomm/socketaddress.cc
+/gio/giomm/socketaddress.h
+/gio/giomm/socketaddressenumerator.cc
+/gio/giomm/socketaddressenumerator.h
+/gio/giomm/socketclient.cc
+/gio/giomm/socketclient.h
+/gio/giomm/socketconnectable.cc
+/gio/giomm/socketconnectable.h
+/gio/giomm/socketconnection.cc
+/gio/giomm/socketconnection.h
+/gio/giomm/socketcontrolmessage.cc
+/gio/giomm/socketcontrolmessage.h
+/gio/giomm/socketlistener.cc
+/gio/giomm/socketlistener.h
+/gio/giomm/socketservice.cc
+/gio/giomm/socketservice.h
+/gio/giomm/srvtarget.cc
+/gio/giomm/srvtarget.h
+/gio/giomm/tcpconnection.cc
+/gio/giomm/tcpconnection.h
+/gio/giomm/themedicon.cc
+/gio/giomm/themedicon.h
+/gio/giomm/threadedsocketservice.cc
+/gio/giomm/threadedsocketservice.h
+/gio/giomm/volume.cc
+/gio/giomm/volume.h
+/gio/giomm/volumemonitor.cc
+/gio/giomm/volumemonitor.h
+/gio/giomm/zlibdecompressor.h
+/gio/giomm/zlibcompressor.cc
+/gio/giomm/zlibcompressor.h
+/gio/giomm/zlibdecompressor.cc
 
 # glib/
 /glib/glibmm-*.pc
+/glib/glibmm/private/*_p.h
 /glib/glibmm/balancedtree.cc
 /glib/glibmm/balancedtree.h
 /glib/glibmm/bytearray.cc
@@ -128,7 +336,6 @@ giommconfig.h
 /glib/glibmm/regex.h
 /glib/glibmm/shell.cc
 /glib/glibmm/shell.h
-/glib/glibmm/signalproxy.h
 /glib/glibmm/spawn.cc
 /glib/glibmm/spawn.h
 /glib/glibmm/thread.cc
@@ -141,20 +348,14 @@ giommconfig.h
 /glib/glibmm/unicode.h
 /glib/glibmm/uriutils.cc
 /glib/glibmm/uriutils.h
-/glib/glibmm/value_basictypes.cc
-/glib/glibmm/value_basictypes.h
 /glib/glibmm/valuearray.cc
 /glib/glibmm/valuearray.h
 /glib/glibmm/variant.cc
 /glib/glibmm/variant.h
-/glib/glibmm/variant_basictypes.cc
-/glib/glibmm/variant_basictypes.h
 /glib/glibmm/variantiter.cc
 /glib/glibmm/variantiter.h
 /glib/glibmm/varianttype.cc
 /glib/glibmm/varianttype.h
-/glib/glibmm/wrap_init.cc
-/glib/glibmm/private/*_p.h
 
 # tests/
 /tests/*/test
@@ -169,3 +370,225 @@ giommconfig.h
 /tools/extra_defs_gen/generate_defs_glib
 /tools/generate_wrap_init.pl
 /tools/gmmproc
+
+
+#################
+## Eclipse
+#################
+
+*.pydevproject
+.project
+.metadata
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+
+#################
+## Visual Studio
+#################
+
+## Ignore Visual Studio temporary files, build results, and
+## files generated by popular Visual Studio add-ons.
+
+# User-specific files
+*.suo
+*.user
+*.sln.docstates
+
+# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+[Bb]in/
+[Oo]bj/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.log
+*.scc
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.cachefile
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+
+# Guidance Automation Toolkit
+*.gpState
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# NCrunch
+*.ncrunch*
+.*crunch*.local.xml
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+DocProject/Help/Html2
+DocProject/Help/html
+
+# Click-Once directory
+publish/
+
+# Publish Web Output
+*.Publish.xml
+*.pubxml
+
+# NuGet Packages Directory
+## TODO: If you have NuGet Package Restore enabled, uncomment the next line
+#packages/
+
+# Windows Azure Build Output
+csx
+*.build.csdef
+
+# Windows Store app package directory
+AppPackages/
+
+# Others
+sql/
+*.Cache
+ClientBin/
+[Ss]tyle[Cc]op.*
+~$*
+*~
+*.dbmdl
+*.[Pp]ublish.xml
+*.pfx
+*.publishsettings
+
+# RIA/Silverlight projects
+Generated_Code/
+
+# Backup & report files from converting an old project file to a newer
+# Visual Studio version. Backup files are not needed, because we have git ;-)
+_UpgradeReport_Files/
+Backup*/
+UpgradeLog*.XML
+UpgradeLog*.htm
+
+# SQL Server files
+App_Data/*.mdf
+App_Data/*.ldf
+
+#############
+## Windows detritus
+#############
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Mac crap
+.DS_Store
+
+
+#############
+## Python
+#############
+
+*.py[co]
+
+# Packages
+*.egg
+*.egg-info
+dist/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+
+#Translations
+*.mo
+
+#Mr Developer
+.mr.developer.cfg
+
+/MSVC_Net2005/giomm/giomm.rc
+/MSVC_Net2005/glibmm/glibmm.rc
+/build/msvc/glibmm.vsprops
+
+/gio/giomm/notification.cc
+/gio/giomm/notification.h
