@@ -675,6 +675,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\gio\giomm\socketsource.cc"
+				>
+			</File>
+			<File
 				RelativePath="..\..\gio\giomm\srvtarget.cc"
 				>
 			</File>
@@ -1110,6 +1114,10 @@
 			</File>
 			<File
 				RelativePath="..\..\gio\giomm\socketservice.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\gio\giomm\socketsource.h"
 				>
 			</File>
 			<File
