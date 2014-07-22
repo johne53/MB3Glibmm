@@ -75,6 +75,7 @@ mountoperation_p.h
 networkaddress_p.h
 networkservice_p.h
 outputstream_p.h
+permission_p.h
 pollableinputstream_p.h
 pollableoutputstream_p.h
 proxy_p.h
@@ -87,6 +88,7 @@ seekable_p.h
 settings_p.h
 simpleaction_p.h
 simpleactiongroup_p.h
+simplepermission_p.h
 socket_p.h
 socketaddress_p.h
 socketaddressenumerator_p.h

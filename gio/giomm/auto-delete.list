@@ -152,6 +152,8 @@ networkservice.cc
 networkservice.h
 outputstream.cc
 outputstream.h
+permission.cc
+permission.h
 pollableinputstream.cc
 pollableinputstream.h
 pollableoutputstream.cc
@@ -176,6 +178,8 @@ simpleaction.cc
 simpleaction.h
 simpleactiongroup.cc
 simpleactiongroup.h
+simplepermission.cc
+simplepermission.h
 socket.cc
 socket.h
 socketaddress.cc
