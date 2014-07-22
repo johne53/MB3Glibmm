@@ -103,6 +103,7 @@
 #include <giomm/networkservice.h>
 #include <giomm/notification.h>
 #include <giomm/outputstream.h>
+#include <giomm/permission.h>
 #include <giomm/pollableinputstream.h>
 #include <giomm/pollableoutputstream.h>
 #include <giomm/proxy.h>
@@ -115,6 +116,7 @@
 #include <giomm/settings.h>
 #include <giomm/simpleaction.h>
 #include <giomm/simpleactiongroup.h>
+#include <giomm/simplepermission.h>
 #include <giomm/socket.h>
 #include <giomm/socketaddress.h>
 #include <giomm/socketaddressenumerator.h>
