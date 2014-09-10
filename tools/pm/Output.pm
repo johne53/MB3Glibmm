@@ -209,8 +209,9 @@ sub output_wrap_vfunc_cc($$$$$$$$)
      convert_args_c_to_cpp($objCFunc, $objCppfunc, $line_num);
 
     my $returnValue = $$objCppfunc{return_value};
+    my $exceptionHandler = $$objCppfunc{exception_handler};
 
-    my $str = sprintf("_VFUNC_PCC(%s,%s,%s,%s,\`%s\',\`%s\',\`%s\',%s,%s,%s,%s,%s,%s,%s)dnl\n",
+    my $str = sprintf("_VFUNC_PCC(%s,%s,%s,%s,\`%s\',\`%s\',\`%s\',%s,%s,%s,%s,%s,%s,%s,%s)dnl\n",
       $$objCppfunc{name},
       $cname,
       $$objCppfunc{rettype},
@@ -224,7 +225,8 @@ sub output_wrap_vfunc_cc($$$$$$$$)
       $errthrow,
       $$objCppfunc{slot_type},
       $$objCppfunc{c_data_param_name},
-      $returnValue);
+      $returnValue,
+      $exceptionHandler);
 
     $self->append($str);
   }
@@ -234,10 +236,10 @@ sub output_wrap_vfunc_cc($$$$$$$$)
 # _SIGNAL_H(signame,rettype, `<cppargs>', ifdef)
 # _SIGNAL_PH(gtkname,crettype, cargs and names, ifdef, deprecated)
 # void output_wrap_default_signal_handler_h($filename, $line_num, $objCppfunc,
-#      $objCDefsFunc, $ifdef, $deprecated)
-sub output_wrap_default_signal_handler_h($$$$$$$)
+#      $objCDefsFunc, $ifdef, $deprecated, $exceptionHandler)
+sub output_wrap_default_signal_handler_h($$$$$$$$)
 {
-  my ($self, $filename, $line_num, $objCppfunc, $objCDefsFunc, $ifdef, $deprecated) = @_;
+  my ($self, $filename, $line_num, $objCppfunc, $objCDefsFunc, $ifdef, $deprecated, $exceptionHandler) = @_;
 
   # The default signal handler is a virtual function.
   # It's not hidden by deprecation, since that would break ABI.
@@ -253,21 +255,23 @@ sub output_wrap_default_signal_handler_h($$$$$$$)
   #The default callback, which will call on_* or the base default callback.
   #Declares the callback in the private *Class class and sets it in the class_init function.
   #This is hidden by deprecation.
-  $str = sprintf("_SIGNAL_PH(%s,%s,\`%s\',%s,%s)dnl\n",
+  $str = sprintf("_SIGNAL_PH(%s,%s,\`%s\',%s,%s,%s)dnl\n",
     $$objCDefsFunc{name},
     $$objCDefsFunc{rettype},
     $objCDefsFunc->args_types_and_names(),
     $ifdef,
-    $deprecated
+    $deprecated,
+    $exceptionHandler
    );
   $self->append($str);
 }
 
-# _SIGNAL_CC(signame, gtkname, rettype, crettype,`<cppargs>',`<cargs>', const, refreturn, ifdef)
-sub output_wrap_default_signal_handler_cc($$$$$$$$$)
+# _SIGNAL_CC(signame, gtkname, rettype, crettype,`<cppargs>',`<cargs>', const, refreturn, ifdef, exceptionHandler)
+sub output_wrap_default_signal_handler_cc($$$$$$$$$$$)
 {
   my ($self, $filename, $line_num, $objCppfunc, $objDefsSignal, $bImplement,
-      $bCustomCCallback, $bRefreturn, $ifdef, $deprecated) = @_;
+      $bCustomCCallback, $bRefreturn, $ifdef, $deprecated, $exceptionHandler) = @_;
+
   my $cname = $$objDefsSignal{name};
   # $cname = $1 if ($args[3] =~ /"(.*)"/); #TODO: What's this about?
 
@@ -291,7 +295,8 @@ sub output_wrap_default_signal_handler_cc($$$$$$$$$)
       $conversions,
       $$objCppfunc{const},
       $refreturn,
-      $ifdef);
+      $ifdef
+      );
     $self->append($str);
   }
 
@@ -313,7 +318,7 @@ sub output_wrap_default_signal_handler_cc($$$$$$$$$)
       convert_args_c_to_cpp($objDefsSignal, $objCppfunc, $line_num);
 
     #This is hidden by deprecation.
-    my $str = sprintf("_SIGNAL_PCC(%s,%s,%s,%s,\`%s\',\`%s\',\`%s\',\`%s\',%s,%s)dnl\n",
+    my $str = sprintf("_SIGNAL_PCC(%s,%s,%s,%s,\`%s\',\`%s\',\`%s\',\`%s\',%s,%s,%s)dnl\n",
       $$objCppfunc{name},
       $cname,
       $$objCppfunc{rettype},
@@ -323,7 +328,8 @@ sub output_wrap_default_signal_handler_cc($$$$$$$$$)
       $conversions,
       ${$objDefsSignal->get_param_names()}[0],
       $ifdef,
-      $deprecated);
+      $deprecated,
+      $exceptionHandler);
     $self->append($str);
   }
 }
@@ -572,15 +578,15 @@ sub output_wrap_create($$$)
   }
 }
 
-# void output_wrap_sig_decl($filename, $line_num, $objCSignal, $objCppfunc, $signal_name, $bCustomCCallback, $ifdef, $commentblock, $deprecated, $deprecation_docs)
+# void output_wrap_sig_decl($filename, $line_num, $objCSignal, $objCppfunc, $signal_name, $bCustomCCallback, $ifdef, $commentblock, $deprecated, $deprecation_docs, $exceptionHandler)
 # custom_signalproxy_name is "" when no type conversion is required - a normal templates SignalProxy will be used instead.
-sub output_wrap_sig_decl($$$$$$$$$$)
+sub output_wrap_sig_decl($$$$$$$$$$$)
 {
-  my ($self, $filename, $line_num, $objCSignal, $objCppfunc, $signal_name, $bCustomCCallback, $ifdef, $commentblock, $deprecated, $deprecation_docs) = @_;
+  my ($self, $filename, $line_num, $objCSignal, $objCppfunc, $signal_name, $bCustomCCallback, $ifdef, $commentblock, $deprecated, $deprecation_docs, $exceptionHandler) = @_;
 
 # _SIGNAL_PROXY(c_signal_name, c_return_type, `<c_arg_types_and_names>',
 #               cpp_signal_name, cpp_return_type, `<cpp_arg_types>',`<c_args_to_cpp>',
-#               refdoc_comment)
+#               refdoc_comment, exceptionHandler)
 
   # Get the signal name with underscores only (to look up docs -- they are
   # stored that way).
@@ -623,7 +629,7 @@ sub output_wrap_sig_decl($$$$$$$$$$)
   my $conversions =
     convert_args_c_to_cpp($objCSignal, $objCppfunc, $line_num);
 
-  my $str = sprintf("_SIGNAL_PROXY(%s,%s,\`%s\',%s,%s,\`%s\',\`%s\',\`%s\',%s,\`%s\',%s)dnl\n",
+  my $str = sprintf("_SIGNAL_PROXY(%s,%s,\`%s\',%s,%s,\`%s\',\`%s\',\`%s\',%s,\`%s\',%s,%s)dnl\n",
     $signal_name,
     $$objCSignal{rettype},
     $objCSignal->args_types_and_names_without_object(),
@@ -634,7 +640,8 @@ sub output_wrap_sig_decl($$$$$$$$$$)
     $bCustomCCallback, #When this is true, it will not write the *_callback implementation for you.
     $deprecated,
     $doxycomment,
-    $ifdef
+    $ifdef,
+    $exceptionHandler
   );
 
   $self->append($str);
@@ -1051,7 +1058,7 @@ sub convert_args_cpp_to_c($$$$$)
     # is an output parameter since it will be readded.
     my $cpp_index = $num_cpp_args - 1;
     $cpp_index++ if($has_output_param);
-    $$c_param_name_mappings{@$c_param_names[$num_c_args_expected]} = $cpp_index;
+    $$c_param_name_mappings{$$c_param_names[$num_c_args_expected]} = $cpp_index;
   }
 
   # If the method has a slot temporarily decrement the C arg count when
@@ -1077,6 +1084,22 @@ sub convert_args_cpp_to_c($$$$$)
   # the number of C++ arguments.
   $num_cpp_args++ if($has_output_param);
 
+  if ($index == 0)
+  {
+    # Check if the C param names in %$c_param_name_mappings exist.
+    foreach my $mapped_c_param_name (keys %$c_param_name_mappings)
+    {
+      next if $mapped_c_param_name eq "" || $mapped_c_param_name eq "OUT";
+
+      if (!grep($_ eq $mapped_c_param_name, @$c_param_names))
+      {
+        Output::error("convert_args_cpp_to_c(): There is no C argument called \"$mapped_c_param_name\"\n");
+        $objCDefsFunc->dump();
+        return ("", "", "");
+      }
+    }
+  }
+
   # Get the desired argument list combination.
   my $possible_arg_list = $$objCppfunc{possible_args_list}[$index];
 
@@ -1101,7 +1124,7 @@ sub convert_args_cpp_to_c($$$$$)
     # Account for a possible C++ output param in the C++ arg list.
     $iCParam-- if($has_output_param && $i > $output_param_index);
 
-    my $c_param_name = @$c_param_names[$iCParam];
+    my $c_param_name = $$c_param_names[$iCParam];
     my $cpp_param_index = $i;
     $cpp_param_index = $$c_param_name_mappings{$c_param_name} if(defined($$c_param_name_mappings{$c_param_name}));
 
@@ -1285,6 +1308,7 @@ sub convert_args_c_to_cpp($$$)
   # Loop through the C++ parameters:
   my $i;
   my $cpp_param_max = $num_cpp_args;
+  my $num_c_args = scalar(@{$c_param_names});
 
   for ($i = 0; $i < $cpp_param_max; $i++)
   {
@@ -1298,7 +1322,13 @@ sub convert_args_c_to_cpp($$$)
       $cParamName = $cpp_index_param_mappings{$i};
 
       # Get the C index based on the C param name.
-      ++$c_index until $$c_param_names[$c_index] eq $cParamName;
+      ++$c_index until $c_index >= $num_c_args || $$c_param_names[$c_index] eq $cParamName;
+      if ($c_index >= $num_c_args)
+      {
+        Output::error("convert_args_c_to_cpp(): There is no C argument called \"$cParamName\"\n");
+        $objCDefsFunc->dump();
+        return "";
+      }
     }
     else
     {
@@ -1407,6 +1437,21 @@ sub get_ctor_properties($$$$$$)
     return "";
   }
 
+  if ($index == 0)
+  {
+    # Check if the C param names in %$c_param_name_mappings exist.
+    foreach my $mapped_c_param_name (keys %$c_param_name_mappings)
+    {
+      next if $mapped_c_param_name eq "";
+
+      if (!grep($_ eq $mapped_c_param_name, @$c_param_names))
+      {
+        Output::error("get_ctor_properties(): There is no C argument called \"$mapped_c_param_name\"\n");
+        $objCDefsFunc->dump();
+        return ("", "", "");
+      }
+    }
+  }
 
   # Get the desired argument list combination.
   my $possible_arg_list = $$objCppfunc{possible_args_list}[$index];
@@ -1416,7 +1461,7 @@ sub get_ctor_properties($$$$$$)
 
   for ($i = 0; $i < $num_args; $i++)
   {
-    my $c_param_name = @$c_param_names[$i];
+    my $c_param_name = $$c_param_names[$i];
     my $cpp_param_index = $i;
     $cpp_param_index = $$c_param_name_mappings{$c_param_name} if(defined($$c_param_name_mappings{$c_param_name}));
 
