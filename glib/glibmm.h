@@ -82,14 +82,19 @@
 #include <glibmmconfig.h>
 //#include <glibmm/i18n.h> //This must be included by the application, after system headers such as <iostream>.
 
-//Include this first because we need it to be the first thing to include <glib.h>, 
-//so we can do an undef trick to still use deprecated API in the header: 
+//Include this first because we need it to be the first thing to include <glib.h>,
+//so we can do an undef trick to still use deprecated API in the header:
 #include <glibmm/thread.h>
 
 #include <glibmm/threads.h>
 
 #include <glibmm/arrayhandle.h>
 #include <glibmm/balancedtree.h>
+#include <glibmm/base64.h>
+#ifndef GLIBMM_INCLUDED_FROM_WRAP_INIT_CC
+// wrap_init.cc includes this file after it has cleared G_GNUC_CONST.
+#include <glibmm/binding.h>
+#endif
 #include <glibmm/bytearray.h>
 #include <glibmm/bytes.h>
 #include <glibmm/checksum.h>
@@ -97,6 +102,7 @@
 #include <glibmm/containerhandle_shared.h>
 #include <glibmm/convert.h>
 #include <glibmm/date.h>
+#include <glibmm/datetime.h>
 #include <glibmm/dispatcher.h>
 #include <glibmm/error.h>
 #include <glibmm/exception.h>
@@ -134,6 +140,7 @@
 #include <glibmm/threadpool.h>
 #include <glibmm/timer.h>
 #include <glibmm/timeval.h>
+#include <glibmm/timezone.h>
 #include <glibmm/uriutils.h>
 #include <glibmm/ustring.h>
 #include <glibmm/value.h>

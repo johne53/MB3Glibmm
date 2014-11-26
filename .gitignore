@@ -52,6 +52,7 @@ giommconfig.h
 /docs/doc-install.pl
 /docs/doc-postprocess.pl
 /docs/doxygen.css
+/docs/doxygen-extra.css
 /docs/tagfile-to-devhelp2.xsl
 /docs/reference/Doxyfile
 /docs/reference/doxygen.log
@@ -101,6 +102,8 @@ giommconfig.h
 /glib/glibmm/private/*_p.h
 /glib/glibmm/balancedtree.cc
 /glib/glibmm/balancedtree.h
+/glib/glibmm/binding.cc
+/glib/glibmm/binding.h
 /glib/glibmm/bytearray.cc
 /glib/glibmm/bytearray.h
 /glib/glibmm/bytes.cc
