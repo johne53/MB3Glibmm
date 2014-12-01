@@ -77,23 +77,23 @@
 /* Define to 1 if wide stream is available. */
 #undef GLIBMM_HAVE_WIDE_STREAM
 
-/* Major version number of glibmm. */
-#undef GLIBMM_MAJOR_VERSION
+/* Major version number of glibmm. */ /* Defined by JE - 22-06-2013 (was previously #undef'd */
+#define GLIBMM_MAJOR_VERSION @GLIBMM_MAJOR_VERSION@
 
 /* Define if C++ member functions may refer to member templates. */
 #undef GLIBMM_MEMBER_FUNCTIONS_MEMBER_TEMPLATES
 
-/* Micro version number of glibmm. */
-#undef GLIBMM_MICRO_VERSION
+/* Micro version number of glibmm. */ /* Defined by JE - 22-06-2013 (was previously #undef'd */
+#define GLIBMM_MICRO_VERSION @GLIBMM_MICRO_VERSION@
 
-/* Minor version number of glibmm. */
-#undef GLIBMM_MINOR_VERSION
+/* Minor version number of glibmm. */ /* Defined by JE - 22-06-2013 (was previously #undef'd */
+#define GLIBMM_MINOR_VERSION @GLIBMM_MINOR_VERSION@
 
 /* This is always set. This is only for backwards compatibility. */
 #undef GLIBMM_PROPERTIES_ENABLED
 
 /* Define if glibmm is built as a static library */
-#undef GLIBMM_STATIC_LIB
+/* #undef GLIBMM_STATIC_LIB */
 
 
 #endif /* GLIBMM_CONFIGURE */
