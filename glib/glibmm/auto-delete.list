@@ -1,5 +1,7 @@
 balancedtree.cc
 balancedtree.h
+binding.cc
+binding.h
 bytearray.cc
 bytearray.h
 bytes.cc
