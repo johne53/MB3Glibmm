@@ -1,0 +1,45 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource."
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+#include <winver.h>
+
+VS_VERSION_INFO VERSIONINFO
+  FILEVERSION @GLIBMM_MAJOR_VERSION@,@GLIBMM_MINOR_VERSION@,@GLIBMM_MICRO_VERSION@,@GLIBMM_INTERFACE_AGE@
+  PRODUCTVERSION @GLIBMM_MAJOR_VERSION@,@GLIBMM_MINOR_VERSION@,@GLIBMM_MICRO_VERSION@,@GLIBMM_INTERFACE_AGE@
+  FILEFLAGSMASK 0
+  FILEFLAGS 0
+  FILEOS VOS__WINDOWS32
+  FILETYPE VFT_DLL
+  FILESUBTYPE VFT2_UNKNOWN
+  BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+      BLOCK "040904B0"
+      BEGIN
+	VALUE "CompanyName", "The glibmm development team (see AUTHORS)"
+	VALUE "FileDescription", "The official C++ wrapper for glib"
+	VALUE "FileVersion", "@PACKAGE_VERSION@.0"
+	VALUE "InternalName", "@GLIBMM_MODULE_NAME@-@LT_CURRENT_MINUS_AGE@"
+	VALUE "LegalCopyright", "Distribution is under the LGPL (see COPYING)"
+	VALUE "OriginalFilename", "libglibmm-2.4-@LT_CURRENT_MINUS_AGE@.dll"
+	VALUE "ProductName", "glibmm"
+	VALUE "ProductVersion", "@GLIBMM_MAJOR_VERSION@, @GLIBMM_MINOR_VERSION@, @GLIBMM_MICRO_VERSION@, @GLIBMM_INTERFACE_AGE@"
+      END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+      VALUE "Translation", 0x409, 1200
+    END
+  END
+
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\0"
+END
