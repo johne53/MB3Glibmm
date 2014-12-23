@@ -1,4 +1,4 @@
-/* Copyright (C) 2010 The giomm Development Team
+/* Copyright (C) 2014 The gtkmm Development Team
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -15,20 +15,24 @@
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <gio/gunixfdmessage.h>
-#include <glibmm/error.h>
-#include <giomm/unixfdlist.h>
+#include <glibmm/exceptionhandler.h>
+#include <gio/gio.h>
+#include "slot_async.h"
 
-namespace Gio
-{
+namespace Gio {
 
-Glib::ArrayHandle<int> UnixFDMessage::steal_fds()
+void NetworkMonitor::can_reach_async(const Glib::RefPtr<SocketConnectable>& connectable, const SlotAsyncReady& slot, const Glib::RefPtr<Cancellable>& cancellable)
 {
-  int length = 0;
-  const int* fds = g_unix_fd_message_steal_fds(gobj(), &length);
-  // The array is terminated with a -1, but that terminating element is
-  // not included in the length that g_unix_fd_message_steal_fds() returns.
-  return Glib::ArrayHandle<int>(fds, length, Glib::OWNERSHIP_DEEP);
+  // Create a copy of the slot.
+  // A pointer to it will be passed through the callback's data parameter
+  // and deleted in the callback.
+  SlotAsyncReady* slot_copy = new SlotAsyncReady(slot);
+
+  g_network_monitor_can_reach_async(gobj(),
+    Glib::unwrap(connectable),
+    Glib::unwrap(cancellable),
+    &SignalProxy_async_callback,
+    slot_copy);
 }
 
 } // namespace Gio

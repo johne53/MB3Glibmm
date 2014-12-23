@@ -233,9 +233,9 @@ sub parse_on_cdata($$)
   }
 }
 
-sub lookup_enum_documentation($$$)
+sub lookup_enum_documentation($$$$)
 {
-  my ($c_enum_name, $cpp_enum_name, $ref_flags) = @_;
+  my ($c_enum_name, $cpp_enum_name, $indent, $ref_flags) = @_;
   
   my @subst_in  = [];
   my @subst_out = [];
@@ -285,11 +285,11 @@ sub lookup_enum_documentation($$$)
     $param =~ s/([a-zA-Z0-9]*(_[a-zA-Z0-9]+)*)_?/$1/g;
     if(length($desc) > 0)
     {
-      $desc =~ s/\n/ /g;
-      $desc =~ s/ $//;
-      $desc =~ s/^\s+//; # Chop off leading whitespace
+      # Chop off leading and trailing whitespace.
+      $desc =~ s/^\s+//;
+      $desc =~ s/\s+$//;
       $desc .= '.' unless($desc =~ /(?:^|\.)$/);
-      $docs .= "\@var $cpp_enum_name ${param}\n \u${desc}\n\n"; # \u = Convert next char to uppercase
+      $docs .= "\@var $cpp_enum_name ${param}\n\u${desc}\n\n"; # \u = Convert next char to uppercase
     }
   }
 
@@ -305,9 +305,9 @@ sub lookup_enum_documentation($$$)
   
   remove_example_code($c_enum_name, \$docs);
 
-  # Convert to Doxygen-style comment.
-  $docs =~ s/\n/\n \* /g;
-  $docs =  "\/\*\* " . $docs;
+  # Add indentation and an asterisk on all lines except the first.
+  # $docs does not contain leading "/**" and trailing "*/".
+  $docs =~ s/\n/\n${indent}\* /g;
 
   return $docs;
 }
@@ -514,14 +514,20 @@ sub convert_tags_to_doxygen($)
     s"<variablelist>\n?(.*?)</variablelist>\n?"&DocsParser::convert_variablelist($1)"esg;
 
     # Use our Doxygen @newin alias.
-    # If Since is not followed by a colon, substitute @newin only if it's
-    # in a sentence of its own at the end of the string. 
-    s/\bSince:\s*(\d+)\.(\d+)\.(\d+)\b\.?/\@newin{$1,$2,$3}/g;
-    s/\bSince:\s*(\d+)\.(\d+)\b\.?/\@newin{$1,$2}/g;
-    s/(\.\s+)Since\s+(\d+)\.(\d+)\.(\d+)\.?$/$1\@newin{$2,$3,$4}/;
-    s/(\.\s+)Since\s+(\d+)\.(\d+)\.?$/$1\@newin{$2,$3}/;
-
-    s"\b->\b"->"g;
+    # Accept "Since" with or without a following colon.
+    # Require the Since clause to be
+    # - at the end of the string,
+    # - at the end of a line and followed by a blank line, or
+    # - followed by "Deprecated".
+    # If none of these requirements is met, "Since" may be embedded inside
+    # a function description, referring to only a part of the description.
+    # See e.g. g_date_time_format() and gdk_cursor_new_from_pixbuf().
+    # Doxygen assumes that @newin is followed by a paragraph that describes
+    # what is new, but we don't use it that way.
+    my $first_part = '\bSince[:\h]\h*(\d+)\.(\d+)'; # \h == [\t ] (horizontal whitespace)
+    my $last_part = '\.?(\s*$|\h*\n\h*\n|\s+Deprecated)';
+    s/$first_part\.(\d+)$last_part/\@newin{$1,$2,$3}$4/g;
+    s/$first_part$last_part/\@newin{$1,$2}$3/g;
 
     # Doxygen is too dumb to handle &mdash;
     s"&mdash;" \@htmlonly&mdash;\@endhtmlonly "g;
