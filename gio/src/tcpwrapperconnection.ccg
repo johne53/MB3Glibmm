@@ -1,4 +1,4 @@
-/* Copyright (C) 2003 The glibmm Development Team
+/* Copyright (C) 2015 The giomm Development Team
  *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
@@ -15,16 +15,8 @@
  * Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
  */
 
-#include <glibmm/init.h>
-#include <glibmm/error.h>
+#include <gio/gio.h>
 
-namespace Glib
+namespace Gio
 {
-
-void init()
-{
-  // Also calls Glib::wrap_register_init() and Glib::wrap_init().
-  Glib::Error::register_init();
-}
-
-} // namespace Glib
+} // namespace Gio
