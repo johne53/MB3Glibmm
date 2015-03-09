@@ -160,6 +160,14 @@ public:
   _WRAP_METHOD(ApplicationFlags get_flags() const, g_application_get_flags)
   _WRAP_METHOD(void set_flags(ApplicationFlags flags), g_application_set_flags)
 
+  _WRAP_METHOD(std::string get_resource_base_path() const, g_application_get_resource_base_path)
+  _WRAP_METHOD(void set_resource_base_path(const std::string& resource_path), g_application_set_resource_base_path)
+
+  /** Disable automatic resource loading functionality.
+   * See set_resource_base_path().
+   */
+  void unset_resource_base_path();
+
   _WRAP_METHOD(void set_action_group(const Glib::RefPtr<ActionGroup>& action_group), g_application_set_action_group,
     deprecated "Use the Gio::ActionMap interface instead.")
 
@@ -341,6 +349,7 @@ public:
 
   _WRAP_METHOD(void mark_busy(), g_application_mark_busy)
   _WRAP_METHOD(void unmark_busy(), g_application_unmark_busy)
+  _WRAP_METHOD(void get_is_busy() const, g_application_get_is_busy)
 
   _WRAP_METHOD(void send_notification(const Glib::ustring& id{?}, const Glib::RefPtr<Notification>& notification), g_application_send_notification)
   _WRAP_METHOD(void withdraw_notification(const Glib::ustring& id), g_application_withdraw_notification)
@@ -351,6 +360,8 @@ public:
   _WRAP_PROPERTY("inactivity-timeout", guint)
   _WRAP_PROPERTY("is-registered", bool)
   _WRAP_PROPERTY("is-remote", bool)
+  _WRAP_PROPERTY("resource-base-path", bool)
+  _WRAP_PROPERTY("is-busy", bool)
 
 //#m4 _CONVERSION(`const gchar*', `const Glib::ustring&', `Glib::ustring($3)')
 //#m4 _CONVERSION(`GVariant*', `const Glib::VariantBase&', `Glib::wrap($3, true)')
