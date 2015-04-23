@@ -25,7 +25,9 @@
 #include <giomm/dbusmethodinvocation.h>
 #include <giomm/dbuserror.h>
 #include <giomm/menumodel.h>
+#ifdef G_OS_UNIX /* Added by JE - 03-03-2014 */
 #include <giomm/unixfdlist.h>
+#endif
 #include "slot_async.h"
 
 namespace
