@@ -9,6 +9,7 @@ fileutils_p.h
 iochannel_p.h
 keyfile_p.h
 markup_p.h
+miscutils_p.h
 module_p.h
 nodetree_p.h
 optioncontext_p.h

@@ -22,6 +22,8 @@ keyfile.cc
 keyfile.h
 markup.cc
 markup.h
+miscutils.cc
+miscutils.h
 module.cc
 module.h
 nodetree.cc
