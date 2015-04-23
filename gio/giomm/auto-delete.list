@@ -178,6 +178,8 @@ simpleaction.cc
 simpleaction.h
 simpleactiongroup.cc
 simpleactiongroup.h
+simpleiostream.cc
+simpleiostream.h
 simplepermission.cc
 simplepermission.h
 socket.cc

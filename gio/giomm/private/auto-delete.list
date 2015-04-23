@@ -88,6 +88,7 @@ seekable_p.h
 settings_p.h
 simpleaction_p.h
 simpleactiongroup_p.h
+simpleiostream_p.h
 simplepermission_p.h
 socket_p.h
 socketaddress_p.h
