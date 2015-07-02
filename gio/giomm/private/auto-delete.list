@@ -86,6 +86,9 @@ resolver_p.h
 resource_p.h
 seekable_p.h
 settings_p.h
+settingsschema_p.h
+settingsschemakey_p.h
+settingsschemasource_p.h
 simpleaction_p.h
 simpleactiongroup_p.h
 simpleiostream_p.h
