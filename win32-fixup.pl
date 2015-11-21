@@ -69,13 +69,13 @@ if (-1 != index($command, "-X64")) {
 	$api_version = "32-2.4-0";
 }
 
-process_file ("glib/glibmmconfig.h");
 process_file ("glib/glibmm.pc");
 process_file ("gio/giomm.pc");
-process_file ("gio/giommconfig.h");
 process_file ("tools/gmmproc");
 
 if (-1 != index($command, "-buildall")) {
+	process_file ("glib/glibmmconfig.h");
+	process_file ("gio/giommconfig.h");
 	process_file ("build/msvc/glibmm.vsprops");
 	process_file ("tools/generate_wrap_init.pl");
 	process_file ("gio/giomm.rc");
