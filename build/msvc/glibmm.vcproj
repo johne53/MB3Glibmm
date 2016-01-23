@@ -288,6 +288,10 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\glib\glibmm\base64.cc"
+				>
+			</File>
+			<File
 				RelativePath="..\..\glib\glibmm\binding.cc"
 				>
 			</File>
@@ -583,6 +587,10 @@
 			</File>
 			<File
 				RelativePath="..\..\glib\glibmm\balancedtree.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\glib\glibmm\base64.h"
 				>
 			</File>
 			<File
